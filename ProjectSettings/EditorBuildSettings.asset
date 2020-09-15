@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Accueil.unity
     guid: 031250ddcec080f4d894dd9492b5c537
+  - enabled: 1
+    path: Assets/Scenes/BlocMega.unity
+    guid: 515af021b364bd84c9ea13cf4a2a25ef
   m_configObjects: {}
