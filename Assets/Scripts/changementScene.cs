@@ -20,7 +20,7 @@ public class changementScene : MonoBehaviour
         if (connection == null)
         {
             // INFORMATIONS DE CONNEXION BDD
-            string connectionString = "Host=localhost; Port=3306; Database=apc; Uid=apc; Pwd=lemotdepasse;";
+            string connectionString = "Host=localhost; Port=3306; Database=apc; Uid=root; Pwd=root;";
             try
             {
                 connection = new MySqlConnection(connectionString);
@@ -38,12 +38,13 @@ public class changementScene : MonoBehaviour
         if (connection != null)
         {
             connection.Close();
+            connection = null;
         }
     }
 
-    private void TestBDD()
+    private bool CheckConnexion(string name, string pass)
     {
-        string commandText = string.Format("SELECT user_name, user_passhash FROM user");
+        string commandText = string.Format("SELECT user_name, user_passhash FROM user WHERE user_name = '{0}'", name);
         if (connection != null)
         {
             MySqlCommand command = connection.CreateCommand();
@@ -53,14 +54,26 @@ public class changementScene : MonoBehaviour
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Debug.Log(reader.GetString(0) + ", " + reader.GetString(1));
+                    if(name == reader.GetString(0) && pass == reader.GetString(1))
+                    {
+                        // Connexion ok
+                        Debug.Log("connexion ok");
+                        return true;
+                    }
                 }
+                // ID ou mot de passe invalide
+                Debug.LogError("connexion pas ok : nom ou mdp invalide");
+                return false;
             }
             catch (System.Exception ex)
             {
+                // Erreur MySQL
                 Debug.LogError("MySQL error: " + ex.ToString());
+                return false;
             }
         }
+        // Pas de connexion
+        return false;
     }
 
     public void connexion()
@@ -71,11 +84,15 @@ public class changementScene : MonoBehaviour
 
         // Faire la vérification avec la bdd ici
         ConnexionBDD();
-        TestBDD();
-        DeconnexionBDD();
-
-        // Si connexion ok
-        LoadLevel();
+        if (CheckConnexion(InputId.text, InputMdp.text))
+        {
+            DeconnexionBDD();
+            LoadLevel();
+        }
+        else
+        {
+            DeconnexionBDD();
+        }
     }
     public void LoadLevel()
     {
