@@ -400,6 +400,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: matiereButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Info
+      objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -512,6 +517,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1794e3044847d4a88af7d99d05be9f, type: 3}
+--- !u!114 &546330083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3624384662545211403, guid: 9e1794e3044847d4a88af7d99d05be9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 546330082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907802957
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,8 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e14f31308e0ce3448ba3f5fb76cf8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  matiereButtons: []
+  matiereButtons:
+  - {fileID: 546330083}
 --- !u!4 &924991099
 Transform:
   m_ObjectHideFlags: 0
