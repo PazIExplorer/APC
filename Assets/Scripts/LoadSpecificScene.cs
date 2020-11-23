@@ -14,6 +14,7 @@ public class LoadSpecificScene : MonoBehaviour
     }
     public IEnumerator loadNextScene()
     {
+        PlayerPrefs.SetString("competence","Untagged");
         fadeSystem.SetTrigger("Fade");
         yield return new WaitForSeconds(.8f);
         SceneManager.LoadScene(groupe);

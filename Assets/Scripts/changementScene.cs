@@ -86,6 +86,8 @@ public class changementScene : MonoBehaviour
         ConnexionBDD();
         if (CheckConnexion(InputId.text, InputMdp.text))
         {
+            PlayerPrefs.SetString("compte", InputId.text);
+            PlayerPrefs.SetString("mdp", InputMdp.text);
             DeconnexionBDD();
             LoadLevel();
         }

@@ -19,6 +19,7 @@ public class LevelSelector : MonoBehaviour
                 {
                     matiereButtons[i].gameObject.SetActive(true);
                 }
+
                 
             }
         }
@@ -40,11 +41,17 @@ public class LevelSelector : MonoBehaviour
     public void setButtonTag(Button tagButton)
     {
         PlayerPrefs.SetString("competence",tagButton.gameObject.tag);
+        
     }
     
-    public void setButtonComp(Button button)
+    
+    public void setOwnTag(Button button)
     {
-        PlayerPrefs.SetString("competence", button.gameObject.name);
+        
+        button.gameObject.tag = button.gameObject.name;
     }
+    
+    
+
 }
     

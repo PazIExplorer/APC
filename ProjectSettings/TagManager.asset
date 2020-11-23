@@ -11,6 +11,8 @@ TagManager:
   - Svt
   - Geo
   - Geol
+  - info101
+  - info102
   layers:
   - Default
   - TransparentFX
