@@ -6345,6 +6345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSystem: {fileID: 852497703}
+  groupe: MatiereSelect
 --- !u!61 &1418935501
 BoxCollider2D:
   m_ObjectHideFlags: 0

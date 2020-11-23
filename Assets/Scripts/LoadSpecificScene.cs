@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LoadSpecificScene : MonoBehaviour
 {
     public Animator fadeSystem;
+    public string groupe;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -15,6 +16,6 @@ public class LoadSpecificScene : MonoBehaviour
     {
         fadeSystem.SetTrigger("Fade");
         yield return new WaitForSeconds(.8f);
-        SceneManager.LoadScene("MatiereSelect");
+        SceneManager.LoadScene(groupe);
     }
 }

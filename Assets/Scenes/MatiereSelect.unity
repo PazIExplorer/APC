@@ -601,7 +601,12 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (2)
+      value: Math
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Math
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -894,7 +899,7 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (1)
+      value: Info
       objectReference: {fileID: 0}
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -1605,7 +1610,12 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (4)
+      value: Chim
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Chi
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -2147,7 +2157,12 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (3)
+      value: Phys
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Phy
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -3414,7 +3429,12 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (6)
+      value: Geol
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Geol
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -3777,7 +3797,12 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton (5)
+      value: Svt
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Svt
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -4658,7 +4683,7 @@ PrefabInstance:
     - target: {fileID: 3669982291578682651, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_Name
-      value: matiereButton
+      value: Precedent
       objectReference: {fileID: 0}
     - target: {fileID: 4705916280911659900, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}

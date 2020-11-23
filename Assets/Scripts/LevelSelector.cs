@@ -19,7 +19,7 @@ public class LevelSelector : MonoBehaviour
                 {
                     matiereButtons[i].gameObject.SetActive(true);
                 }
-
+                
             }
         }
         else
@@ -41,4 +41,10 @@ public class LevelSelector : MonoBehaviour
     {
         PlayerPrefs.SetString("competence",tagButton.gameObject.tag);
     }
+
+    public void setButtonComp(Button button)
+    {
+        PlayerPrefs.SetString("competence", button.gameObject.name);
+    }
 }
+    
