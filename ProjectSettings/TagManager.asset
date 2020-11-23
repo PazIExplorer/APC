@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Info
+  - Math
+  - Phy
+  - Chi
+  - Svt
+  - Geo
+  - Geol
   layers:
   - Default
   - TransparentFX
