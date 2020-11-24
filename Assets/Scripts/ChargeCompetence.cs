@@ -1,20 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
 using MySql.Data.Types;
 
-public class changementScene : MonoBehaviour
+public class ChargeCompetence : MonoBehaviour
 {
-    public string LevelToLoad;
     private MySqlConnection connection;
-
-    // Input fields / mdp
-    public InputField InputId;
-    public InputField InputMdp;
-
+    private string connectionString = "Host=localhost; Port=3306; Database=apc; Uid=root; Pwd=root;";
+    public Button button;
+    // Start is called before the first frame update
+    void Start()
+    {
+        connexion();
+    }
     private void ConnexionBDD()
     {
         if (connection == null)
@@ -32,7 +32,6 @@ public class changementScene : MonoBehaviour
             }
         }
     }
-
     private void DeconnexionBDD()
     {
         if (connection != null)
@@ -54,7 +53,7 @@ public class changementScene : MonoBehaviour
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    if(name == reader.GetString(0) && pass == reader.GetString(1))
+                    if (name == reader.GetString(0) && pass == reader.GetString(1))
                     {
                         // Connexion ok
                         Debug.Log("connexion ok");
@@ -75,30 +74,39 @@ public class changementScene : MonoBehaviour
         // Pas de connexion
         return false;
     }
-
     public void connexion()
     {
-        // Debugs
-        Debug.Log("Identifiant  : " + InputId.text);
-        Debug.Log("Mot de passe : " + InputMdp.text);
-
+        string compte = PlayerPrefs.GetString("compte");
+        string mdp = PlayerPrefs.GetString("mdp");
+        string commande = string.Format("SELECT * FROM competence WHERE competence_id IN (SELECT competence_id FROM validation_comp WHERE user_id IN (SELECT user_id FROM user WHERE user_name = {0}", compte);
         // Faire la vérification avec la bdd ici
         ConnexionBDD();
-        if (CheckConnexion(InputId.text, InputMdp.text))
+        if (CheckConnexion(compte, mdp))
         {
-            PlayerPrefs.SetString("compte", InputId.text);
-            PlayerPrefs.SetString("mdp", InputMdp.text);
+            MySqlCommand ordre = connection.CreateCommand();
+            ordre.CommandText = commande;
+            try
+            {
+                MySqlDataReader reader = ordre.ExecuteReader();
+                while (reader.Read())
+                {
+                    button.GetComponentInChildren<Text>().text += reader.GetString(0);
+                }
+            }
+            catch (System.Exception ex1)
+            {
+                button.GetComponentInChildren<Text>().text += "Pas de connection";
+                // Erreur MySQL
+                Debug.LogError("MySQL error: " + ex1.ToString());
+            }
 
-            DeconnexionBDD();
-            LoadLevel();
+                DeconnexionBDD();
+            
         }
         else
         {
             DeconnexionBDD();
         }
     }
-    public void LoadLevel()
-    {
-        SceneManager.LoadScene(LevelToLoad);
-    }
+
 }
