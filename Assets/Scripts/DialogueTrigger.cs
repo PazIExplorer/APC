@@ -12,8 +12,8 @@ public class DialogueTrigger : MonoBehaviour
     
 
     public bool isInRange;
-    // Update is called once per frame
-    void Update()
+    // Ucalled once
+    void Start()
     {
             TriggerDialogue();
        
@@ -23,8 +23,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void TriggerDialogue()
     {
-        chatText.text = "Voulez vous faire valider:    ";
         chatText.text += dialogue.chat;
-        chatText.text += " ?";
+        
     }
 }

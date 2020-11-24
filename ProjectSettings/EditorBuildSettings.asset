@@ -22,10 +22,13 @@ EditorBuildSettings:
     guid: a0756731b4c643541b8f57fbf46f40b4
   - enabled: 0
     path: 
-    guid: 0c1b182037c232c4881ef19b9aa88a40
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BlocMega.unity
     guid: ea3f5142b4421784b97efa54f01792ba
+  - enabled: 1
+    path: Assets/Scenes/BlocMegaProf.unity
+    guid: d36776a17c5cfe94dbbb083ad7a95d5e
   - enabled: 1
     path: Assets/Scenes/CompetenceSelect.unity
     guid: 993b5574d94a45a45b42f4d7be235669
@@ -35,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialogue.unity
     guid: 9e102e24e40db8644a6dc3e6db9e5801
+  - enabled: 1
+    path: Assets/Scenes/ValideEtu.unity
+    guid: ac84608b431f3b94ca10ae9bc31fe2b9
+  - enabled: 1
+    path: Assets/Scenes/ProfSelect.unity
+    guid: 9104121063109a849a45f41ee7f3f019
+  - enabled: 1
+    path: Assets/Scenes/ProfValid.unity
+    guid: 162c5d48d6f81884396a4c70b15f1811
   m_configObjects: {}
