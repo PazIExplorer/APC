@@ -57,11 +57,13 @@ public class ChargeCompetence : MonoBehaviour
                     {
                         // Connexion ok
                         Debug.Log("connexion ok");
+                        reader.Close();
                         return true;
                     }
                 }
                 // ID ou mot de passe invalide
                 Debug.LogError("connexion pas ok : nom ou mdp invalide");
+                reader.Close();
                 return false;
             }
             catch (System.Exception ex)
@@ -78,7 +80,7 @@ public class ChargeCompetence : MonoBehaviour
     {
         string compte = PlayerPrefs.GetString("compte");
         string mdp = PlayerPrefs.GetString("mdp");
-        string commande = string.Format("SELECT * FROM competence WHERE competence_id IN (SELECT competence_id FROM validation_comp WHERE user_id IN (SELECT user_id FROM user WHERE user_name = {0}", compte);
+        string commande = string.Format("SELECT * FROM competence WHERE competence_id IN (SELECT competence_id FROM validation_comp WHERE user_id IN (SELECT user_id FROM user WHERE user_name = '{0}'))", compte);
         // Faire la vérification avec la bdd ici
         ConnexionBDD();
         if (CheckConnexion(compte, mdp))
@@ -92,15 +94,18 @@ public class ChargeCompetence : MonoBehaviour
                 {
                     button.GetComponentInChildren<Text>().text += reader.GetString(0);
                 }
+                reader.Close();
+
             }
             catch (System.Exception ex1)
             {
-                button.GetComponentInChildren<Text>().text += "Pas de connection";
+                button.GetComponentInChildren<Text>().text += "Pas de connexion";
                 // Erreur MySQL
                 Debug.LogError("MySQL error: " + ex1.ToString());
             }
+            
 
-                DeconnexionBDD();
+            DeconnexionBDD();
             
         }
         else
