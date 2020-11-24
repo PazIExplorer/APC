@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NiveauSelect.unity
     guid: a0756731b4c643541b8f57fbf46f40b4
   - enabled: 0
-    path: Assets/Scenes/MatiereDemande.unity
+    path: 
     guid: 0c1b182037c232c4881ef19b9aa88a40
   - enabled: 1
     path: Assets/Scenes/BlocMega.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MatiereSelect.unity
     guid: 8bd0a8ab186f36245a08e29a924bed45
+  - enabled: 1
+    path: Assets/Scenes/Dialogue.unity
+    guid: 9e102e24e40db8644a6dc3e6db9e5801
   m_configObjects: {}
