@@ -58,11 +58,13 @@ public class changementScene : MonoBehaviour
                     {
                         // Connexion ok
                         Debug.Log("connexion ok");
+                        reader.Close();
                         return true;
                     }
                 }
                 // ID ou mot de passe invalide
                 Debug.LogError("connexion pas ok : nom ou mdp invalide");
+                reader.Close();
                 return false;
             }
             catch (System.Exception ex)
