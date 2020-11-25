@@ -38,18 +38,17 @@ public class LevelSelector : MonoBehaviour
         
     }
 
-    public void setButtonTag(Button tagButton)
+    
+    
+    public void setMatiere(Button button)
     {
-        PlayerPrefs.SetString("competence",tagButton.gameObject.tag);
-        
+        PlayerPrefs.SetString("matiere", button.gameObject.GetComponentInChildren<Text>().text);
     }
-    
-    
-    public void setOwnTag(Button button)
+    public void setCours(Button button)
     {
-        PlayerPrefs.SetString("competence", button.gameObject.GetComponentInChildren<Text>().text);
+        PlayerPrefs.SetString("cours", button.gameObject.GetComponentInChildren<Text>().text);
     }
-    
+
     public void setCompetence(Button button)
     {
         Debug.Log(button.gameObject.GetComponentInChildren<Text>().text);
