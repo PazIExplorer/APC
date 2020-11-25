@@ -77,12 +77,14 @@ public class ProfValide : MonoBehaviour
     {
         pos += 1;
         SetText();
+        buttonPrec.interactable = true;
     }
 
     public void Precedent()
     {
         pos -= 1;
         SetText();
+        buttonNext.interactable = true;
     }
 
     public void Valider()
@@ -121,7 +123,7 @@ public class ProfValide : MonoBehaviour
     {
         // Refus
         string commandText = string.Format(
-            "UPDATE validation_comp SET validation_type = 0, validation_ts = CURRENT_TIMESTAMP "
+            "UPDATE validation_comp SET validation_type = 3, validation_ts = CURRENT_TIMESTAMP "
             + "WHERE user_id IN (SELECT user_id FROM user WHERE user_name = '{0}') AND competence_id IN (SELECT competence_id FROM competence WHERE competence_name = '{1}')",
             PlayerPrefs.GetString("nomEtuModif"), competenceAValide[pos]);
         if (connection != null)

@@ -58,30 +58,90 @@ public class ValidateDialogue : MonoBehaviour
     {
         ConnexionBDD();
 
-        string commandText = string.Format(
-            "INSERT INTO validation_comp (`user_id`, `competence_id`, `validation_type`, `validation_ts`) "
-            + "SELECT '{0}', c.competence_id, 1, CURRENT_TIMESTAMP FROM competence c WHERE competence_name = '{1}')",
-            PlayerPrefs.GetInt("userid"), PlayerPrefs.GetString("competenceChoisi"));
+        bool validationCompExistsInDB = false;
+
         if (connection != null)
         {
-            MySqlCommand command = connection.CreateCommand();
-            command.CommandText = commandText;
+            string commandText1 = string.Format(
+                "SELECT user_id, competence_id FROM validation_comp WHERE user_id = '{0}' AND competence_id IN (SELECT competence_id FROM competence WHERE competence_name = '{1}')",
+                PlayerPrefs.GetInt("userid"), PlayerPrefs.GetString("competenceChoisi"));
+
+            MySqlCommand command1 = connection.CreateCommand();
+            command1.CommandText = commandText1;
             try
             {
-                int nbLignesModif = command.ExecuteNonQuery();
-                if (nbLignesModif > 0)
+                MySqlDataReader reader = command1.ExecuteReader();
+                if (reader.Read())
                 {
-                    Debug.Log("Compétence mise en demande de validation.");
-                } else
-                {
-                    Debug.Log("Erreur demande de validation de la compétence.");
+                    validationCompExistsInDB = true;
                 }
+                else
+                {
+                    validationCompExistsInDB = false;
+                }
+                reader.Close();
             }
             catch (System.Exception ex)
             {
                 // Erreur MySQL
                 Debug.LogError("MySQL error: " + ex.ToString());
             }
+
+            if (validationCompExistsInDB)
+            {
+                // Mise à jour de l'entrée existante dans la BDD
+                string commandText = string.Format(
+                    "UPDATE validation_comp SET validation_type = 1, validation_ts = CURRENT_TIMESTAMP "
+                    + "WHERE user_id IN (SELECT user_id FROM user WHERE user_name = '{0}') AND competence_id IN (SELECT competence_id FROM competence WHERE competence_name = '{1}')",
+                    PlayerPrefs.GetString("nomEtuModif"), PlayerPrefs.GetString("competenceChoisi"));
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = commandText;
+                try
+                {
+                    int nbLignesModif = command.ExecuteNonQuery();
+                    if (nbLignesModif > 0)
+                    {
+                        Debug.Log("Compétence mise en demande de validation. (UPDATE)");
+                    }
+                    else
+                    {
+                        Debug.Log("Erreur demande de validation de la compétence. (UPDATE)");
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    // Erreur MySQL
+                    Debug.LogError("MySQL error: " + ex.ToString());
+                }
+            }
+            else
+            {
+                // Création de l'entrée dans la BDD
+                string commandText = string.Format(
+                "INSERT INTO validation_comp (`user_id`, `competence_id`, `validation_type`, `validation_ts`) "
+                + "SELECT '{0}', c.competence_id, 1, CURRENT_TIMESTAMP FROM competence c WHERE competence_name = '{1}'",
+                PlayerPrefs.GetInt("userid"), PlayerPrefs.GetString("competenceChoisi"));
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = commandText;
+                try
+                {
+                    int nbLignesModif = command.ExecuteNonQuery();
+                    if (nbLignesModif > 0)
+                    {
+                        Debug.Log("Compétence mise en demande de validation. (INSERT)");
+                    }
+                    else
+                    {
+                        Debug.Log("Erreur demande de validation de la compétence. (INSERT)");
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    // Erreur MySQL
+                    Debug.LogError("MySQL error: " + ex.ToString());
+                }
+            }
+            
         }
 
         DeconnexionBDD();
