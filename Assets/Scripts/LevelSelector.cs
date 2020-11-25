@@ -32,11 +32,11 @@ public class LevelSelector : MonoBehaviour
     
     public void setMatiere(Button button)
     {
-        PlayerPrefs.SetString("matiere", button.gameObject.GetComponentInChildren<Text>().text);
+        PlayerPrefs.SetString("matiereChoisi", button.gameObject.GetComponentInChildren<Text>().text);
     }
     public void setCours(Button button)
     {
-        PlayerPrefs.SetString("cours", button.gameObject.GetComponentInChildren<Text>().text);
+        PlayerPrefs.SetString("coursChoisi", button.gameObject.GetComponentInChildren<Text>().text);
     }
 
     public void setCompetence(Button button)
