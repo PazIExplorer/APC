@@ -44,7 +44,7 @@ public class changementScene : MonoBehaviour
 
     private bool CheckConnexion(string name, string pass)
     {
-        string commandText = string.Format("SELECT user_name, user_passhash, user_type FROM user WHERE user_name = '{0}'", name);
+        string commandText = string.Format("SELECT user_name, user_passhash, user_type, user_id FROM user WHERE user_name = '{0}'", name);
         if (connection != null)
         {
             MySqlCommand command = connection.CreateCommand();
@@ -65,6 +65,7 @@ public class changementScene : MonoBehaviour
                             levelToLoad = "BlocMega";
                         }
                         // Connexion ok
+                        PlayerPrefs.SetInt("userid", reader.GetInt32(3));
                         Debug.Log("connexion ok");
                         reader.Close();
                         return true;
