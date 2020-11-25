@@ -11,6 +11,10 @@ public class LoadSpecificScene : MonoBehaviour
         {
             StartCoroutine(loadNextScene());
         }
+        if (collision.CompareTag("player"))
+        {
+            SceneManager.LoadScene(groupe);
+        }
     }
     public IEnumerator loadNextScene()
     {

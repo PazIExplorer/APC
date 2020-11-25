@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour
 
     
 
-    public bool isInRange;
+    
     // Ucalled once
     void Start()
     {
@@ -21,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
 
     
 
-    void TriggerDialogue()
+    public void TriggerDialogue()
     {
         chatText.text += dialogue.chat;
         

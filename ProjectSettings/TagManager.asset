@@ -13,6 +13,7 @@ TagManager:
   - Geol
   - info101
   - info102
+  - player
   layers:
   - Default
   - TransparentFX

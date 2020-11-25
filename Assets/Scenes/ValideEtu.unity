@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 1655264940}
   - component: {fileID: 1655264939}
   - component: {fileID: 1655264941}
+  - component: {fileID: 1655264942}
   m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
@@ -745,9 +746,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    chat: je suis roux
+    chat: "Le Lorem Ipsum est simplement du faux texte employ\xE9 dans la composition
+      et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard
+      de l'imprimerie depuis les ann\xE9es 1500, quand un imprimeur anonyme assembla
+      ensemble des morceaux de texte pour r\xE9aliser un livre sp\xE9cimen de polices
+      de texte. Il n'a pas fait que survivre cinq si\xE8cles, mais s'est aussi adapt\xE9
+      \xE0 la bureautique informatique, sans que son contenu n'en soit modifi\xE9.
+      Il a \xE9t\xE9 popularis\xE9 dans les ann\xE9es 1960 gr\xE2ce \xE0 la vente
+      de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus r\xE9cemment,
+      par son inclusion dans des applications de mise en page de texte, comme Aldus
+      PageMaker."
   chatText: {fileID: 1655264939}
-  isInRange: 0
+--- !u!114 &1655264942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655264937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1655264938}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1989879383
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7299fb0e234e04145b9a8c4742d37b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: MatiereSelect
 --- !u!114 &1989879386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,5 +846,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     chat: 
-  chatText: {fileID: 0}
-  isInRange: 0
+  chatText: {fileID: 1655264939}

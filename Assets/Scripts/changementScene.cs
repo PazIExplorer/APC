@@ -8,7 +8,7 @@ using MySql.Data.Types;
 
 public class changementScene : MonoBehaviour
 {
-    public string LevelToLoad;
+    private string levelToLoad;
     private MySqlConnection connection;
 
     // Input fields / mdp
@@ -44,7 +44,7 @@ public class changementScene : MonoBehaviour
 
     private bool CheckConnexion(string name, string pass)
     {
-        string commandText = string.Format("SELECT user_name, user_passhash FROM user WHERE user_name = '{0}'", name);
+        string commandText = string.Format("SELECT user_name, user_passhash, user_type FROM user WHERE user_name = '{0}'", name);
         if (connection != null)
         {
             MySqlCommand command = connection.CreateCommand();
@@ -56,6 +56,14 @@ public class changementScene : MonoBehaviour
                 {
                     if(name == reader.GetString(0) && pass == reader.GetString(1))
                     {
+                        if (reader.GetString(2) == "controleur")
+                        {
+                            levelToLoad = "BlocMegaProf";
+                        }
+                        else
+                        {
+                            levelToLoad = "BlocMega";
+                        }
                         // Connexion ok
                         Debug.Log("connexion ok");
                         reader.Close();
@@ -101,6 +109,6 @@ public class changementScene : MonoBehaviour
     }
     public void LoadLevel()
     {
-        SceneManager.LoadScene(LevelToLoad);
+        SceneManager.LoadScene(levelToLoad);
     }
 }
