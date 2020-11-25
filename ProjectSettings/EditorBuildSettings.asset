@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CreerCompte.unity
     guid: f501e51d9f632684fae8399dc8baf18b
   - enabled: 1
+    path: Assets/Scenes/ProfHub.unity
+    guid: 07ec073f1a73a7742921dfe90f46dd2b
+  - enabled: 1
     path: Assets/Scenes/CompetenceChoisi.unity
     guid: 515af021b364bd84c9ea13cf4a2a25ef
   - enabled: 1
