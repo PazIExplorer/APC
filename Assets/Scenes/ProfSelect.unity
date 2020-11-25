@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene: ProfValid
+  etudiant: {fileID: 639465006}
 --- !u!1 &639465004
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +358,7 @@ GameObject:
   - component: {fileID: 639465007}
   - component: {fileID: 639465006}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: InputField Nom Etu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,8 +519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.5, y: 113.4}
-  m_SizeDelta: {x: 770.6972, y: 90.74766}
+  m_AnchoredPosition: {x: 0, y: 113.4}
+  m_SizeDelta: {x: 600, y: 90.74766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667505726
 MonoBehaviour:
@@ -542,18 +543,19 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Entrer une nouvelle comp\xE9tence"
+  m_Text: "Entrer le nom de l'\xE9tudiant dont les comp\xE9tences doivent \xEAtre
+    valid\xE9es"
 --- !u!222 &667505727
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -631,7 +633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chercher
+  m_Text: "Modifier l'\xE9tudiant"
 --- !u!222 &676722215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -850,7 +852,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: "Identifiant de l'\xE9tudiant"
 --- !u!222 &955270599
 CanvasRenderer:
   m_ObjectHideFlags: 0

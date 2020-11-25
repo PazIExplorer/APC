@@ -60,7 +60,7 @@ public class ValidateDialogue : MonoBehaviour
 
         string commandText = string.Format(
             "INSERT INTO validation_comp (`user_id`, `competence_id`, `validation_type`, `validation_ts`) "
-            + "SELECT '{0}', c.competence_id, 1, CURRENT_TIMESTAMP FROM competence c WHERE competence_name = '{1}'",
+            + "SELECT '{0}', c.competence_id, 1, CURRENT_TIMESTAMP FROM competence c WHERE competence_name = '{1}')",
             PlayerPrefs.GetInt("userid"), PlayerPrefs.GetString("competenceChoisi"));
         if (connection != null)
         {
