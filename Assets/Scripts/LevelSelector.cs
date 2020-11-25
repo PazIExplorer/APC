@@ -7,16 +7,25 @@ using System.Collections.Generic;
 
 public class LevelSelector : MonoBehaviour
 {
-    private string valeur;
+    
     public Button[] matiereButtons;
     public string level;
-
+    private string[] matieres;
     private MySqlConnection connection;
     private void Start()
     {
-        
-        
-        
+
+
+        if (level == "matiere")
+        {
+            matieres = GetMatieres();
+        }else if(level == "cours")
+        {
+            matieres = GetCours();
+        }else if(level == "competence")
+        {
+            matieres = GetCompetences();
+        }
         
             //trier les boutons a afficher
             //tout mettre en setactive false
@@ -24,6 +33,16 @@ public class LevelSelector : MonoBehaviour
             //for matiere[i] i allant de 0 au max de matiere (par exemple)
             //matiere[i].text = table[i].text
             //matiere[i].setactive true
+            for(int i = 0; i < matiereButtons.Length; i++)
+        {
+            matiereButtons[i].gameObject.SetActive(false);
+        }
+
+            for(int i=0; i < matieres.Length; i++)
+        {
+            matiereButtons[i].gameObject.GetComponentInChildren<Text>().text = matieres[i];
+            matiereButtons[i].gameObject.SetActive(true);
+        }
         
         
     }
@@ -47,7 +66,7 @@ public class LevelSelector : MonoBehaviour
 
     public void setCompetence(Button button)
     {
-        Debug.Log(button.gameObject.GetComponentInChildren<Text>().text);
+        
         PlayerPrefs.SetString("competenceChoisi",button.gameObject.GetComponentInChildren<Text>().text);
     }
 
