@@ -60,11 +60,10 @@ public class ValidateDialogue : MonoBehaviour
 
         string commandText = string.Format(
             "INSERT INTO validation_comp (`user_id`, `competence_id`, `validation_type`, `validation_ts`) "
-            + "VALUES ('{0}', '{1}', 1, CURRENT_TIMESTAMP)",
-            "test", 1); // TODO: Utiliser les valeurs de PlayerPrefs
+            + "SELECT '{0}', c.competence_id, 1, CURRENT_TIMESTAMP FROM competence c WHERE competence_name = '{1}'",
+            PlayerPrefs.GetInt("userid"), PlayerPrefs.GetString("competenceChoisi"));
         if (connection != null)
         {
-            Debug.Log("Dialogue trigger");
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = commandText;
             try
@@ -84,8 +83,6 @@ public class ValidateDialogue : MonoBehaviour
                 Debug.LogError("MySQL error: " + ex.ToString());
             }
         }
-
-
 
         DeconnexionBDD();
     }
