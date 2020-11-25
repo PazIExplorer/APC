@@ -7,6 +7,7 @@ using MySql.Data.Types;
 public class AjouteCompetence : MonoBehaviour
 {
     public Button button;
+    public InputField matiere;
     public InputField cours;
     public InputField competence;
     public InputField description;
@@ -55,6 +56,33 @@ public class AjouteCompetence : MonoBehaviour
             else
             {
                 Debug.Log("Erreur lors de la création de compétence.");
+            }
+        }
+        catch (System.Exception ex)
+        {
+            // Erreur MySQL
+            Debug.LogError("MySQL error: " + ex.ToString());
+        }
+        DeconnexionBDD();
+        SceneManager.LoadScene("ProfHub");
+    }
+
+    public void ajouterCours()
+    {
+        ConnexionBDD();
+        string commandText = string.Format("INSERT INTO cours SELECT NULL, m.matiere_id, '{1}', 'Cours {1}', '{2}' FROM matiere m WHERE matiere_name LIKE '{0}%'", matiere.text, cours.text, PlayerPrefs.GetInt("userid"));
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = commandText;
+        try
+        {
+            int nbLignes = command.ExecuteNonQuery();
+            if (nbLignes > 0)
+            {
+                Debug.Log("Cours créé avec succès.");
+            }
+            else
+            {
+                Debug.Log("Erreur lors de la création de cours.");
             }
         }
         catch (System.Exception ex)

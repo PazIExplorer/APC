@@ -424,8 +424,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 859582478}
-  cours: {fileID: 1073712064}
-  competence: {fileID: 639465006}
+  matiere: {fileID: 1073712064}
+  cours: {fileID: 639465006}
+  competence: {fileID: 0}
   description: {fileID: 0}
 --- !u!1 &402146745
 GameObject:
@@ -781,7 +782,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Entrer un cours et une description
+  m_Text: "Entrer une mati\xE8re et un cours"
 --- !u!222 &667505727
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 154699312}
-        m_MethodName: ajouterCompetence
+        m_MethodName: ajouterCours
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1145,7 +1146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Description...
+  m_Text: Cours...
 --- !u!222 &955270599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1363,7 +1364,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cours...
+  m_Text: "Mati\xE8re..."
 --- !u!222 &1110686183
 CanvasRenderer:
   m_ObjectHideFlags: 0
