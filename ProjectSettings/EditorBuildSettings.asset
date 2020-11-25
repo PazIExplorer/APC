@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProposeComp.unity
     guid: a5be960ccffea5548bb1e9eac7595470
+  - enabled: 1
+    path: Assets/Scenes/ProfHub.unity
+    guid: 07ec073f1a73a7742921dfe90f46dd2b
   m_configObjects: {}
