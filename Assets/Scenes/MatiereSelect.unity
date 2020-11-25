@@ -1083,6 +1083,7 @@ MonoBehaviour:
   - {fileID: 674820943}
   - {fileID: 1562201047}
   - {fileID: 2016258216}
+  level: matiere
 --- !u!4 &924991099
 Transform:
   m_ObjectHideFlags: 0

@@ -1899,6 +1899,7 @@ MonoBehaviour:
   - {fileID: 2042681201}
   - {fileID: 44555671}
   - {fileID: 1715310104}
+  level: competence
 --- !u!4 &924991099
 Transform:
   m_ObjectHideFlags: 0

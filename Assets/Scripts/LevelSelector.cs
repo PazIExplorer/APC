@@ -5,33 +5,28 @@ public class LevelSelector : MonoBehaviour
 {
     private string valeur;
     public Button[] matiereButtons;
-
+    public string level;
     private void Start()
     {
         Debug.Log(PlayerPrefs.GetString("competence"));
-        valeur = PlayerPrefs.GetString("competence");
-        if (valeur != "Untagged")
+        if (level == "matiere")
         {
-            for (int i = 0; i < matiereButtons.Length; i++)
-            {
-                matiereButtons[i].gameObject.SetActive(false);
-                if (matiereButtons[i].gameObject.CompareTag(valeur))
-                {
-                    matiereButtons[i].gameObject.SetActive(true);
-                }
-
-                
-            }
+            valeur = PlayerPrefs.GetString("matiere");
         }
-        else
+        else if(level == "cours"){
+            valeur = PlayerPrefs.GetString("cours");
+        }
+        else if(level == "competence")
         {
-            for (int i = 0; i < matiereButtons.Length; i++)
-            {
-                matiereButtons[i].gameObject.SetActive(true);
-               
-            }
+            valeur = PlayerPrefs.GetString("competence");
         }
+        
+        
+            //trier les boutons a afficher
+        
+        
     }
+
     public void LoadLevelMatiere(string scene)
     {
         SceneManager.LoadScene(scene);

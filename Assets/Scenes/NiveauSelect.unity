@@ -7256,6 +7256,7 @@ MonoBehaviour:
   - {fileID: 613999726}
   - {fileID: 614317369}
   - {fileID: 67522592}
+  level: cours
 --- !u!4 &1435351756
 Transform:
   m_ObjectHideFlags: 0
@@ -10020,7 +10021,7 @@ PrefabInstance:
     - target: {fileID: 3624384662545211403, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3624384662545211403, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
@@ -10055,7 +10056,7 @@ PrefabInstance:
     - target: {fileID: 3624384662545211403, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: setOwnTag
+      value: setButtonTag
       objectReference: {fileID: 0}
     - target: {fileID: 3624384662545211403, guid: 9e1794e3044847d4a88af7d99d05be9f,
         type: 3}
