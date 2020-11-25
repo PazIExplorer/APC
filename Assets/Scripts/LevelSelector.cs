@@ -25,6 +25,9 @@ public class LevelSelector : MonoBehaviour
         }else if(level == "competence")
         {
             matieres = GetCompetences();
+        }else
+        {
+            return;
         }
         
             //trier les boutons a afficher
@@ -100,6 +103,7 @@ public class LevelSelector : MonoBehaviour
 
     public string[] GetMatieres()
     {
+        ConnexionBDD();
         var matieres = new List<string>();
 
         string commandText = string.Format("SELECT matiere_name FROM matiere");
@@ -123,11 +127,13 @@ public class LevelSelector : MonoBehaviour
             }
         }
 
+        DeconnexionBDD();
         return matieres.ToArray();
     }
 
     public string[] GetCours()
     {
+        ConnexionBDD();
         var cours = new List<string>();
 
         string commandText = string.Format("SELECT cours_name FROM cours WHERE matiere_id IN (SELECT matiere_id FROM matiere WHERE matiere_name = '{0}')", PlayerPrefs.GetString("matiereChoisi"));
@@ -151,11 +157,13 @@ public class LevelSelector : MonoBehaviour
             }
         }
 
+        DeconnexionBDD();
         return cours.ToArray();
     }
 
     public string[] GetCompetences()
     {
+        ConnexionBDD();
         var comp = new List<string>();
 
         string commandText = string.Format("SELECT competence_name FROM competence WHERE cours_id IN (SELECT cours_id FROM cours WHERE cours_name = '{0}')", PlayerPrefs.GetString("coursChoisi"));
@@ -179,6 +187,7 @@ public class LevelSelector : MonoBehaviour
             }
         }
 
+        DeconnexionBDD();
         return comp.ToArray();
     }
 
