@@ -23,6 +23,11 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene("ProfSelect");
     }
 
+    public void loadCompPropos()
+    {
+        SceneManager.LoadScene("ProposeComp");
+    }
+
     public void loadSceneValide()
     {
         ConnexionBDD();
