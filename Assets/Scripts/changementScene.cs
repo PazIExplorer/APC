@@ -58,7 +58,7 @@ public class changementScene : MonoBehaviour
                     {
                         if (reader.GetString(2) == "controleur")
                         {
-                            levelToLoad = "ProfSelect";
+                            levelToLoad = "ProfHub";
                         }
                         else
                         {
