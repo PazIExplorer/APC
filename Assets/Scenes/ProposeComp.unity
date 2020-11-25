@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -32.4}
+  m_AnchoredPosition: {x: 19.1, y: 59.8}
   m_SizeDelta: {x: 333.76877, y: 31.655296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &639465006
@@ -518,8 +518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.5, y: 113.4}
-  m_SizeDelta: {x: 770.6972, y: 90.74766}
+  m_AnchoredPosition: {x: 157, y: 121}
+  m_SizeDelta: {x: 609.53815, y: 90.74766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667505726
 MonoBehaviour:
@@ -553,7 +553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Entrer une nouvelle comp\xE9tence"
+  m_Text: Entrer un eleve
 --- !u!222 &667505727
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: -123}
+  m_AnchoredPosition: {x: 14.9, y: -5}
   m_SizeDelta: {x: 189.78894, y: 39.93184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859582478
