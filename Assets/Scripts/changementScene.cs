@@ -72,7 +72,7 @@ public class changementScene : MonoBehaviour
                     }
                 }
                 // ID ou mot de passe invalide
-                Debug.LogError("connexion pas ok : nom ou mdp invalide");
+                Debug.Log("connexion pas ok : nom ou mdp invalide");
                 reader.Close();
                 return false;
             }
@@ -140,7 +140,7 @@ public class changementScene : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Erreur inscription");
+                    Debug.Log("Erreur inscription");
                 }
             }
             catch (System.Exception ex)

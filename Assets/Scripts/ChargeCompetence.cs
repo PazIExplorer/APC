@@ -62,7 +62,7 @@ public class ChargeCompetence : MonoBehaviour
                     }
                 }
                 // ID ou mot de passe invalide
-                Debug.LogError("connexion pas ok : nom ou mdp invalide");
+                Debug.Log("connexion pas ok : nom ou mdp invalide");
                 reader.Close();
                 return false;
             }

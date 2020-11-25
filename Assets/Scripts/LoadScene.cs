@@ -48,7 +48,7 @@ public class LoadScene : MonoBehaviour
                         reader.Close();
                 } else
                 {
-                    Debug.LogError("Étudiant non trouvé");
+                    Debug.Log("Étudiant non trouvé");
                 }
             }
             catch (System.Exception ex)
