@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour
     public void loadSceneMatiereSelect()
     {
         
-        PlayerPrefs.SetString("competence", "Untagged");
+        
         SceneManager.LoadScene("MatiereSelect");
     }
 

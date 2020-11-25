@@ -307,17 +307,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1989879383}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &733066734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,7 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7299fb0e234e04145b9a8c4742d37b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: 
+  Scene: MatiereSelect
 --- !u!114 &1989879386
 MonoBehaviour:
   m_ObjectHideFlags: 0
