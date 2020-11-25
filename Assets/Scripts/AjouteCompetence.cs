@@ -93,4 +93,31 @@ public class AjouteCompetence : MonoBehaviour
         DeconnexionBDD();
         SceneManager.LoadScene("ProfHub");
     }
+
+    public void ajouterMatiere()
+    {
+        ConnexionBDD();
+        string commandText = string.Format("INSERT INTO matiere VALUES(NULL, '{0}')", matiere.text);
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = commandText;
+        try
+        {
+            int nbLignes = command.ExecuteNonQuery();
+            if (nbLignes > 0)
+            {
+                Debug.Log("Matière créée avec succès.");
+            }
+            else
+            {
+                Debug.Log("Erreur lors de la création de matière.");
+            }
+        }
+        catch (System.Exception ex)
+        {
+            // Erreur MySQL
+            Debug.LogError("MySQL error: " + ex.ToString());
+        }
+        DeconnexionBDD();
+        SceneManager.LoadScene("ProfHub");
+    }
 }

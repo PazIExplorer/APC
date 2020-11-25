@@ -345,7 +345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 859582478}
-  cours: {fileID: 1073712064}
+  matiere: {fileID: 1073712064}
+  cours: {fileID: 0}
   competence: {fileID: 0}
   description: {fileID: 0}
 --- !u!1 &402146745
@@ -732,7 +733,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 154699312}
-        m_MethodName: ajouterCompetence
+        m_MethodName: ajouterMatiere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
