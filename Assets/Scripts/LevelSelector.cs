@@ -8,21 +8,16 @@ public class LevelSelector : MonoBehaviour
     public string level;
     private void Start()
     {
-        Debug.Log(PlayerPrefs.GetString("competence"));
-        if (level == "matiere")
-        {
-            valeur = PlayerPrefs.GetString("matiere");
-        }
-        else if(level == "cours"){
-            valeur = PlayerPrefs.GetString("cours");
-        }
-        else if(level == "competence")
-        {
-            valeur = PlayerPrefs.GetString("competence");
-        }
+        
+        
         
         
             //trier les boutons a afficher
+            //tout mettre en setactive false
+            //appeler la base de donnee sur le bon truc donc if level == matiere on appel matiere etc
+            //for matiere[i] i allant de 0 au max de matiere (par exemple)
+            //matiere[i].text = table[i].text
+            //matiere[i].setactive true
         
         
     }
