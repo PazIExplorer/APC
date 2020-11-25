@@ -51,6 +51,11 @@ public class LevelSelector : MonoBehaviour
         button.gameObject.tag = button.gameObject.name;
     }
     
+    public void setCompetence(Button button)
+    {
+        Debug.Log(button.gameObject.GetComponentInChildren<Text>().text);
+        PlayerPrefs.SetString("competenceChoisi",button.gameObject.GetComponentInChildren<Text>().text);
+    }
     
 
 }

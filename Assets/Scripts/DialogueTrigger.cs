@@ -48,7 +48,7 @@ public class DialogueTrigger : MonoBehaviour
             connection = null;
         }
     }
-
+    
     public void TriggerDialogue()
     {
         // chatText.text += dialogue.chat;
