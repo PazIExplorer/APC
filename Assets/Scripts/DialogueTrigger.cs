@@ -6,7 +6,7 @@ using MySql.Data.Types;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    
+    public string validité;
     public Dialogue dialogue;
     public Text chatText;
     private MySqlConnection connection;
