@@ -34,7 +34,7 @@ EditorBuildSettings:
     guid: ea3f5142b4421784b97efa54f01792ba
   - enabled: 0
     path: 
-    guid: d36776a17c5cfe94dbbb083ad7a95d5e
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/CompetenceSelect.unity
     guid: 993b5574d94a45a45b42f4d7be235669
@@ -62,6 +62,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProposeComp.unity
     guid: a5be960ccffea5548bb1e9eac7595470
+  - enabled: 1
+    path: Assets/Scenes/ProposeCours.unity
+    guid: e61d64c6e74828043bf1c77565597bce
+  - enabled: 1
+    path: Assets/Scenes/ProposeMatiere.unity
+    guid: a647b19504178244ead42ad118c884d9
   - enabled: 1
     path: Assets/Scenes/ProfHub.unity
     guid: 07ec073f1a73a7742921dfe90f46dd2b
