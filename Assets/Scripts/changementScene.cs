@@ -108,6 +108,49 @@ public class changementScene : MonoBehaviour
             DeconnexionBDD();
         }
     }
+
+    public void inscription()
+    {
+        // Debugs
+        Debug.Log("Identifiant  : " + InputId.text);
+        Debug.Log("Mot de passe : " + InputMdp.text);
+
+        ConnexionBDD();
+
+        string commandText = string.Format("INSERT INTO `user` (`user_id`, `user_name`, `user_passhash`, `user_type`, `user_createtime`, `user_fullname`, `user_xp`)"
+            + " VALUES (NULL, '{0}', '{1}', 'etudiant', CURRENT_TIMESTAMP, '{0}', '0');", InputId.text, InputMdp.text);
+        if (connection != null)
+        {
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+            try
+            {
+                int ligneModif = command.ExecuteNonQuery();
+                if (ligneModif > 0)
+                {
+                    Debug.Log("Compte créé");
+                    if (CheckConnexion(InputId.text, InputMdp.text))
+                    {
+                        PlayerPrefs.SetString("compte", InputId.text);
+                        PlayerPrefs.SetString("mdp", InputMdp.text);
+
+                        DeconnexionBDD();
+                        LoadLevel();
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Erreur inscription");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                // Erreur MySQL
+                Debug.LogError("MySQL error: " + ex.ToString());
+            }
+        }
+        DeconnexionBDD();
+    }
     public void LoadLevel()
     {
         SceneManager.LoadScene(levelToLoad);
