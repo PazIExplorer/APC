@@ -745,6 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fc8578fe45c874baa0da8b332038e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "validit\xE9": 
   dialogue:
     chat: "Le Lorem Ipsum est simplement du faux texte employ\xE9 dans la composition
       et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard
@@ -844,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fc8578fe45c874baa0da8b332038e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "validit\xE9": pending
   dialogue:
     chat: 
   chatText: {fileID: 1655264939}

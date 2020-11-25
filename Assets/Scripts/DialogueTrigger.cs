@@ -6,7 +6,7 @@ using MySql.Data.Types;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public string validité;
+    public string validite;
     public Dialogue dialogue;
     public Text chatText;
     private MySqlConnection connection;
@@ -51,13 +51,38 @@ public class DialogueTrigger : MonoBehaviour
     
     public void TriggerDialogue()
     {
+        string commandText = "";
         // chatText.text += dialogue.chat;
-
-        string commandText = string.Format(
+        if(validite == "valide")
+        {
+             commandText = string.Format(
             "SELECT co.cours_name, c.competence_name, c.competence_description, v.* FROM validation_comp v, competence c, cours co "
             + "WHERE v.user_id IN (SELECT user_id FROM user WHERE user_name = '{0}') "
             + "AND v.validation_type = 2 AND v.competence_id = c.competence_id AND c.cours_id = co.cours_id",
             compte);
+        }else
+        if(validite == "pending")
+        {
+             commandText = string.Format(
+             "SELECT co.cours_name, c.competence_name, c.competence_description, v.* FROM validation_comp v, competence c, cours co "
+             + "WHERE v.user_id IN (SELECT user_id FROM user WHERE user_name = '{0}') "
+             + "AND v.validation_type = 1 AND v.competence_id = c.competence_id AND c.cours_id = co.cours_id",
+             compte);
+        }else
+        if(validite == "refuse")
+        {
+             commandText = string.Format(
+                        "SELECT co.cours_name, c.competence_name, c.competence_description, v.* FROM validation_comp v, competence c, cours co "
+                        + "WHERE v.user_id IN (SELECT user_id FROM user WHERE user_name = '{0}') "
+                        + "AND v.validation_type = 0 AND v.competence_id = c.competence_id AND c.cours_id = co.cours_id",
+                        compte);
+        }
+        else
+        {
+            
+            return;
+        }
+        
         if (connection != null)
         {
             Debug.Log("Dialogue trigger");
