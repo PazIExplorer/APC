@@ -4,15 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Info
-  - Math
-  - Phy
-  - Chi
-  - Svt
-  - Geo
-  - Geol
-  - info101
-  - info102
   - player
   layers:
   - Default
